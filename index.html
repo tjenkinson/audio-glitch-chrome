@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Start playing this in chrome, and then load <a href='./video.html' target="_blank">./video.html</a> in firefox.</p>
+        <p>Expected: no glitches</p>
+        <p>Actual: Audio glitches in chrome</p>
+
+        <audio id="audio" controls src="./test.mp3" ></audio>
+        <div id="test"></div>
+
+        <script>
+            doSomeWork();
+
+            function doSomeWork() {
+                const test = document.getElementById('test');
+                test.style.width = '100px';
+                test.style.height = '100px';
+                test.style.backgroundColor = 'red';
+                
+                window.setInterval(() => {
+                    test.style.width = `${100 * Math.random()}px`;
+                }, 100);    
+            }
+        </script>
+    </body>
+</html>
